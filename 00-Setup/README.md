@@ -1,4 +1,4 @@
-# In the following demo will be setting up 3 Node Kubernetes Cluster ( 1 Master & 2 Workers ) 
+# In the following demo will be setting up 3 Node Kubernetes Cluster ( 1 Master & 2 Workers  
 
 
  
@@ -24,7 +24,7 @@ Note :
 ```
 vagrant.exe ssh master
 sudo su - 
-git clone https://github.com/amitvashisttech/kubernetes-ak-08-April-2024.git
+git clone https://github.com/amitvashisttech/kubernetes-adv-aristocrat-10-June-2024.git
 cd 00-Setup
 sh install-k8s-master-node.sh
 
@@ -68,7 +68,7 @@ k8s-master   Ready    master   5m6s   v1.18.0
 ```
 vagrant.exe ssh woker1
 sudo su - 
-git clone https://github.com/amitvashisttech/kubernetes-ak-08-April-2024.git
+git clone https://github.com/amitvashisttech/kubernetes-adv-aristocrat-10-June-2024.git
 cd 00-Setup
 sh install-k8s-worker-node.sh
 ```
