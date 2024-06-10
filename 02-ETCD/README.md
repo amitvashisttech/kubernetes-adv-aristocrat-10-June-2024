@@ -27,6 +27,14 @@ kubectl exec -it etcd-master -n kube-system   -- /bin/sh
 ## Checking the ETCD Prefix
 ```
 ETCDCTL_API=3 etcdctl --cacert="/etc/kubernetes/pki/etcd/ca.crt"  --cert="/etc/kubernetes/pki/etcd/server.crt" --key="/etc/kubernetes/pki/etcd/server.key" get / --prefix --keys-only
-
 ```
 
+## ETCD Backup
+```
+etcdctl --endpoints=https://127.0.0.1:2379 snapshot save /path/to/backup.db
+```
+
+## ETCD Snapshot
+```
+etcdctl snapshot status /path/to/backup.db
+```
