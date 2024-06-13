@@ -6,8 +6,6 @@ metadata:
     description: "Initial deployment"
     contact: "admin@example.com"
 spec:
-  imagePullSecrets:
-  - name: regcred
   replicas: 2
   selector:
     matchLabels:
@@ -20,7 +18,9 @@ spec:
         example.com/revision: "1"
         example.com/configHash: "abcd1234"
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: myapp
-        image: nginx:1.19.3
+        image: nginx:latest
 

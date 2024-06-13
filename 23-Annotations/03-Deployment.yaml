@@ -6,8 +6,6 @@ metadata:
     deployment.kubernetes.io/revision: "1"
     example.com/config-hash: "abcd1234"
 spec:
-  imagePullSecrets:
-  - name: regcred
   replicas: 3
   selector:
     matchLabels:
@@ -17,7 +15,9 @@ spec:
       labels:
         app: myapp
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: myapp
-        image: myapp:latest
+        image: nginx:latest
 
