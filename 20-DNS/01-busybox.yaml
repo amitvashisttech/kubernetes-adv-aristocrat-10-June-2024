@@ -4,6 +4,8 @@ metadata:
   name: busybox
   namespace: default
 spec:
+  imagePullSecrets:
+  - name: regcred
   containers:
   - image: busybox:1.28
     command:

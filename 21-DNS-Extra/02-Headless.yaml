@@ -20,6 +20,8 @@ metadata:
 spec:
   hostname: busybox-1
   subdomain: default-subdomain
+  imagePullSecrets:
+  - name: regcred
   containers:
   - image: busybox:1.28
     command:
@@ -36,6 +38,8 @@ metadata:
 spec:
   hostname: busybox-2
   subdomain: default-subdomain
+  imagePullSecrets:
+  - name: regcred
   containers:
   - image: busybox:1.28
     command:

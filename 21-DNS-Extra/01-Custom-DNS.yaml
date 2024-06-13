@@ -4,6 +4,8 @@ metadata:
   namespace: default
   name: custom-dns-example
 spec:
+  imagePullSecrets:
+  - name: regcred
   containers:
     - name: test
       image: nginx
