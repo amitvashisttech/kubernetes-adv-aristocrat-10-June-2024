@@ -1,0 +1,62 @@
+378 cd 21-DNS-Extra/
+
+ 379 ls
+
+ 380 vim 01-Custom-DNS.yaml
+
+ 381 kubectl get pods
+
+ 382 kubectl apply -f 01-Custom-DNS.yaml
+
+ 383 cd ..
+
+ 384 ls
+
+ 385 cd 20-DNS/
+
+ 386 ls
+
+ 387 kubectl get pods
+
+ 388 kubectl exec -it custom-dns-example -- cat /etc/resolv.conf
+
+ 389 kubectl exec -it busybox -- cat /etc/resolv.conf
+
+ 390 kubectl exec -it python-webapp-deployment-5c9cb74d94-9nr6b -- cat /etc/resolv.conf
+
+ 391 kubectl exec -it busybox -- nslookup python-webapp-deployment-5c9cb74d94-9nr6b
+
+ 392 kubectl get pods -o wide
+
+ 393 kubectl get svc
+
+ 394 kubectl exec -it busybox -- nslookup python-webapp-svc
+
+
+ 399 cd 21-DNS-Extra/
+
+
+ 401 vi 02-Headless.yaml
+
+ 403 kubectl apply -f 02-Headless.yaml
+
+ 404 kubectl get svc
+
+ 405 kubectl get pods
+
+ 406 kubectl get pods -o wide
+
+ 407 kubectl exec -it busybox -- nslookup default-subdomain
+
+ 408 kubectl exec -it busybox -- nslookup busybox-2.default-subdomain.default.svc.cluster.local
+
+ 409 kubectl get pods
+
+ 410 kubectl expose pod busybox1 --type=NodePort
+
+ 411 kubectl expose pod busybox1 --port=80 --type=NodePort
+
+ 412 kubectl get svc
+
+ 413 kubectl describe svc busybox1
+
