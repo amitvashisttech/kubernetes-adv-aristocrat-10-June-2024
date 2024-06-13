@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotated-pod
+  annotations:
+    buildVersion: "v1.0"
+    owner: "dev-team"
+    description: "This is a sample pod with annotations"
+spec:
+  imagePullSecrets:
+  - name: regcred
+  containers:
+  - name: nginx
+    image: nginx:latest
+

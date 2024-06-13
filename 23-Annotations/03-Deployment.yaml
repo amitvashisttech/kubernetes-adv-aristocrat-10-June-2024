@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: annotated-deployment
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    example.com/config-hash: "abcd1234"
+spec:
+  imagePullSecrets:
+  - name: regcred
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: myapp:latest
+
