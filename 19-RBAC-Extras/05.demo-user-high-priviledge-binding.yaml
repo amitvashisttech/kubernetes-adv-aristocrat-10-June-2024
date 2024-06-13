@@ -6,7 +6,7 @@ metadata:
   namespace: rbac-demo
 subjects:
 - kind: ServiceAccount
-  name: another-user
+  name: demo-user
   namespace: rbac-demo
 roleRef:
   kind: Role
