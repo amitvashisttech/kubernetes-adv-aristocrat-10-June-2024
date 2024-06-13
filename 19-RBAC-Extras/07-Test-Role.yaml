@@ -1,0 +1,10 @@
+# escalate-and-bind-role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: rbac-demo
+  name: escalate-and-bind-role
+rules:
+- apiGroups: ["rbac.authorization.k8s.io"]
+  resources: ["roles", "rolebindings", "clusterrolebindings"]
+  verbs: ["escalate","bind", "get", "list", "create"]

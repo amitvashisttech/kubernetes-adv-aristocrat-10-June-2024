@@ -1,0 +1,7 @@
+# another-user.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: another-user
+  namespace: rbac-demo
+
