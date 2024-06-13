@@ -1,0 +1,109 @@
+ 133 cd 23-Annotations/
+
+ 134 ls
+
+ 135 vim 01-Pod-Annotation.yaml
+
+ 136 ls
+
+ 137 kubectl apply -f 01-Pod-Annotation.yaml
+
+ 138 kubectl get pods
+
+ 139 kubectl describe pod annotated-pod
+
+ 140 kubectl annotate pod
+
+ 141 kubectl annotate pod annotated-pod buildVersion="v1.1"
+
+ 142 kubectl annotate pod annotated-pod buildVersion="v1.1" --overwrite
+
+ 143 kubectl describe pod annotated-pod
+
+ 144 kubectl describe pod annotated-pod | grep -i buildVersion
+
+ 145 kubectl annotate pod annotated-pod testannotation="v1"
+
+ 146 kubectl describe pod annotated-pod | grep -i testannotation
+
+ 147 kubectl annotate pod annotated-pod testannotation-
+
+ 148 kubectl describe pod annotated-pod | grep -i testannotation
+
+ 149 s
+
+ 150 ls
+
+ 151 cat 02-Service.yaml
+
+ 152 s
+
+ 153 ls
+
+ 154 kubectl apply -f 02-Service.yaml
+
+ 155 kubectl get svc
+
+ 156 kubectl describe svc annotated-service
+
+ 157 kubectl delete -f 02-Service.yaml
+
+ 158 ls
+
+ 159 vim 03-Deployment.yaml
+
+ 160 kubectl apply -f 03-Deployment.yaml
+
+ 161 vim 03-Deployment.yaml
+
+ 162 kubectl apply -f 03-Deployment.yaml
+
+ 163 kubectl get deploy
+
+ 164 kubectl describe deploy annotated-deployment
+
+ 165 cat 03-Deployment.yaml
+
+ 166 kubectl get pods
+
+ 167 ls
+
+ 168 vim 03-Deployment.yaml
+
+ 191 kubectl delete -f 03-Deployment.yaml
+
+ 192 ls
+
+ 193 vim 04-Deploy-Container.yaml
+
+ 194 ls
+
+ 195 kubectl apply -f 04-Deploy-Container.yaml
+
+ 196 kubectl get pods
+
+ 197 kubectl delete deploy --all
+
+ 198 kubectl delete pod --all
+
+ 199 ls
+
+ 200 kubectl apply -f 04-Deploy-Container.yaml
+
+ 201 kubectl get pods
+
+ 202 kubectl apply -f 04-Deploy-Container.yaml
+
+ 203 kubectl get pods
+
+ 204 kubectl rollout status deploy myapp
+
+ 205 kubectl get deploy
+
+ 206 kubectl describe deploy myapp
+
+ 207 kubectl patch deploy myapp -p '{"spec": {"template":{"metadata": {"annotations": {"example.com/configHash": "newhas567"}}}}}'
+
+ 208 kubectl rollout status deploy myapp
+
+ 209 kubectl get pods
