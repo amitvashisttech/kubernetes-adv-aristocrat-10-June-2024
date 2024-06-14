@@ -15,3 +15,13 @@ spec:
             name: helloworld-v1
             port:
               number: 80
+  - host: python
+    http:
+      paths:
+      - path: /info
+        pathType: Prefix
+        backend:
+          service:
+            name: python-webapp-svc
+            port:
+              number: 31007
